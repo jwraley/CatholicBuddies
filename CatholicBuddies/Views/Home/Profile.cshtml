@@ -1,0 +1,28 @@
+﻿@{
+
+    ViewData["Title"] = "Profile Page";
+}
+
+@using Microsoft.AspNetCore.Identity
+
+@inject SignInManager<IdentityUser> SignInManager
+@inject UserManager<IdentityUser> UserManager
+
+@if (SignInManager.IsSignedIn(User))
+{
+
+    <p>
+
+        Logged in
+
+    </p>
+}
+else
+{
+    <h3> Not logged in</h3>
+}
+
+<br />
+<br />
+<p>This will be the profile page</p>
+<img src="~/images/eCatholic-stock-photo-130.jpg" width="40%" />

@@ -1,0 +1,35 @@
+﻿    <div id="SiteNavBar">
+        <div class="row">
+            <div class="col-md-3" id="NavS1">
+                <div class="pull-right">
+                    <div id="CBLogo">
+                        <img src="~/images/cblogo.png" id="HomeLogo" />
+                        @Html.ActionLink("Catholic Buddies", "Index", "Home", null)</>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-5">
+                <div class="pull-right">
+                    <input id="CBSearch" type="text" placeholder="Search Buddies" />
+                </div>
+            </div>
+            <div id="ProfileLink">
+                @Html.ActionLink("Profile", "Profile", "Home", null)
+            </div>
+            <div id="ProfileLink">
+                @Html.ActionLink("About", "About", "Home", null)
+            </div>
+            <div id="ProfileLink">
+                @Html.ActionLink("Explore", "Explore", "Home", null)
+            </div>
+            <div id="LogOutLink">
+                @Html.ActionLink("Log Out", "Logoff", "Security", null)
+
+            </div>
+            <!--
+                <ul class="nav navbar-nav navbar-right">
+                <li><a asp-area="Identity" asp-page="/Account/Register">Register</a></li>
+                <li><a asp-area="Identity" asp-page="/Account/Login">Login</a></li>
+            </ul>   -->
+        </div>
+    </div>
