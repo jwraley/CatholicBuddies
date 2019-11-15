@@ -7,13 +7,15 @@
 
 @inject SignInManager<IdentityUser> SignInManager
 @inject UserManager<IdentityUser> UserManager
-
+<div id="BlackFont"><h2>@ViewData["Title"]</h2></div>
+<div class="row">
+    <div class="col-md-3">
 @if (SignInManager.IsSignedIn(User))
 {
 
     <p>
 
-        Logged in
+        <div id="BlackFont">Hello @UserManager.GetUserName(User)!</div>
 
     </p>
 }
@@ -21,8 +23,23 @@ else
 {
     <h3> Not logged in</h3>
 }
+        </div>
+        </div>
+            <div class="col-md">
+                <div class="pull-right">
+                    <button type="button" class="btn btn-danger btn-rounded" onclick="location.href = '/DatabaseAccess/UpdateProfile';" value="Update Profile">Update Profile</button>
 
+                </div>
+            </div>
 <br />
 <br />
-<p>This will be the profile page</p>
-<img src="~/images/eCatholic-stock-photo-130.jpg" width="40%" />
+<div id="BlackFont">
+    <div class="row">
+        <div class="col-md-3">
+            <h2>This will be the profile page</h2>
+        </div>
+       
+    </div>
+    <img src="~/images/eCatholic-stock-photo-130.jpg" id="img" />
+</div>
+

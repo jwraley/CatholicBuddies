@@ -126,6 +126,12 @@ body {
 
     }
 
-#Login {
+#BlackFont {
     color: black !important;
+}
+#success_message {display:none;}
+#img {
+    max-width: 50%;
+    max-height: 100vh;
+    height: auto;
 }

@@ -55,7 +55,7 @@ using CatholicBuddies.Models;
             WriteLiteral("    <div id=\"SiteNavBar\">\r\n        <div class=\"row\">\r\n            <div class=\"col-md-3\" id=\"NavS1\">\r\n                <div class=\"pull-right\">\r\n                    <div id=\"CBLogo\">\r\n                        ");
             EndContext();
             BeginContext(206, 47, false);
-            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "e87ff528d60c4ca9969424828542deff", async() => {
+            __tagHelperExecutionContext = __tagHelperScopeManager.Begin("img", global::Microsoft.AspNetCore.Razor.TagHelpers.TagMode.SelfClosing, "c08582aaea3f4fa28ec5fa293a91493f", async() => {
             }
             );
             __Microsoft_AspNetCore_Mvc_Razor_TagHelpers_UrlResolutionTagHelper = CreateTagHelper<global::Microsoft.AspNetCore.Mvc.Razor.TagHelpers.UrlResolutionTagHelper>();

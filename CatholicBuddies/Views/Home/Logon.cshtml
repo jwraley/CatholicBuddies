@@ -1,0 +1,45 @@
+﻿@model CatholicBuddies.Models.UserInfo
+
+@{
+    ViewData["Title"] = "Logon";
+}
+
+<br />
+<div class="row">
+    <div class="col-md-3">
+        <div id="BlackFont"> <h2>Log In</h2></div>
+    </div>
+    <div class="col-md-8">
+        <div class="pull-right">
+
+        <button class="btn btn-danger btn-rounded"  onclick="location.href = '/Home/Register';" value="New User">New User? Click Here to Sign Up</button>
+        </div>
+        <br />
+    </div>
+</div>
+<br />
+<br />
+<div class="text-center"  id="BlackFont">
+    <img src="~/images/sitelogo.png" class="img-rounded" max-width:60% />
+        </div>
+    <br /><br /><br />
+    <form>
+        <div class="form-group">
+            <label class="control-label">Email</label>
+            <input asp-for="Email" class="form-control" />
+            <span asp-validation-for="Email" class="text-danger">
+
+            </span>
+        </div>
+
+        <div class="form-group">
+            <label class="pass">Password</label>
+            <input asp-for="Password" class="form-control" />
+            <span asp-validation-for="Password" class="text-danger">
+
+            </span>
+        </div>
+        <input type="button" onclick="location.href = '/Home/Index';" value="Sign in to your account" />
+    </form>
+</div>
+</div>

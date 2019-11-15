@@ -1,0 +1,256 @@
+﻿@model CatholicBuddies.Models.UserProfile;
+
+@{
+    ViewData["Title"] = "UpdateProfile";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+    <div id="BlackFont">
+        <h2>UpdateProfile</h2>
+        <form action="/Form" method="post">
+            <label for="Fname">Fname Address</label>
+            <input placeholder="HeyBob@email.com" type="text" id="Fname" name="Fname" value="">
+            <input type="submit">
+            <input name="__RequestVerificationToken" type="hidden" value="<token_generated_here>">
+        </form>
+   
+
+        <form asp-action="UpdateProfile" class="form-horizontal">
+            <div asp-validation-summary="ModelOnly" class="text-danger">
+
+            </div>
+            <div class="form-group">
+                <label class="control-label">First Name</label>
+                <input asp-for="Fname" class="form-control" />
+                <span asp-validation-for="Fname" class="text-danger">
+
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Last Name</label>
+                <input asp-for="Lname" class="form-control" />
+                <span asp-validation-for="Lname" class="text-danger">
+
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">email</label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger">
+
+                </span>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label">City</label>
+                <input asp-for="City" class="form-control" />
+                <span asp-validation-for="City" class="text-danger">
+
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">State</label>
+                <select asp-for="State">
+                    <option value="">Select your State</option>
+                    <option>AK</option>
+                    <option>AL</option>
+                    <option>AR</option>
+                    <option>AZ</option>
+                    <option>CA</option>
+                    <option>CO</option>
+                    <option>CT</option>
+                    <option>DE</option>
+                    <option>FL</option>
+                    <option>GA</option>
+                    <option>HI</option>
+                    <option>IA</option>
+                    <option>ID</option>
+                    <option>IL</option>
+                    <option>IN</option>
+                    <option>KS</option>
+                    <option>KY</option>
+                    <option>LA</option>
+                    <option>MA</option>
+                    <option>MD</option>
+                    <option>ME</option>
+                    <option>MI</option>
+                    <option>MN</option>
+                    <option>MO</option>
+                    <option>MS</option>
+                    <option>MT</option>
+                    <option>NC</option>
+                    <option>ND</option>
+                    <option>NE</option>
+                    <option>NH</option>
+                    <option>NJ</option>
+                    <option>NM</option>
+                    <option>NV</option>
+                    <option>NY</option>
+                    <option>OH</option>
+                    <option>OK</option>
+                    <option>OR</option>
+                    <option>PA</option>
+                    <option>RI</option>
+                    <option>SC</option>
+                    <option>SD</option>
+                    <option>TN</option>
+                    <option>TX</option>
+                    <option>UT</option>
+                    <option>VA</option>
+                    <option>VT</option>
+                    <option>WA</option>
+                    <option>WI</option>
+
+                </select>
+                <span asp-validation-for="State" class="text-danger">
+
+                </span>
+            </div>
+            <div class="form-group">
+                <label class="control-label">Diocese</label>
+                <input asp-for="Diocese" class="form-control" />
+                <span asp-validation-for="Diocese" class="text-danger">
+
+                </span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Submit" class="btn-group-lg" />
+            </div>
+        </form>
+        @{
+            if (@TempData["Msg"] != null)
+            {
+                <script>
+
+            alert('@TempData["msg"]')
+                </script>
+            }
+        }
+    </div> <!--black font-->
+        <!--
+    <div class="container">
+
+        <form class="well form-horizontal" action=" " method="post" id="contact_form">
+            <fieldset>
+
+                <legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">First Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="first_name" placeholder="First Name" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Last Name</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                            <input name="last_name" placeholder="Last Name" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">City</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-tower"></i></span>
+                            <input name="city" placeholder="City"class="form-control" type="text">
+                            </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-4 control-label">City</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-star"></i></span>
+                            <select name="state" class="form-control selectpicker">
+                                <option value="">Select your State</option>
+                                <option>AK</option>
+                                <option>AL</option>
+                                <option>AR</option>
+                                <option>AZ</option>
+                                <option>CA</option>
+                                <option>CO</option>
+                                <option>CT</option>
+                                <option>DE</option>
+                                <option>FL</option>
+                                <option>GA</option>
+                                <option>HI</option>
+                                <option>IA</option>
+                                <option>ID</option>
+                                <option>IL</option>
+                                <option>IN</option>
+                                <option>KS</option>
+                                <option>KY</option>
+                                <option>LA</option>
+                                <option>MA</option>
+                                <option>MD</option>
+                                <option>ME</option>
+                                <option>MI</option>
+                                <option>MN</option>
+                                <option>MO</option>
+                                <option>MS</option>
+                                <option>MT</option>
+                                <option>NC</option>
+                                <option>ND</option>
+                                <option>NE</option>
+                                <option>NH</option>
+                                <option>NJ</option>
+                                <option>NM</option>
+                                <option>NV</option>
+                                <option>NY</option>
+                                <option>OH</option>
+                                <option>OK</option>
+                                <option>OR</option>
+                                <option>PA</option>
+                                <option>RI</option>
+                                <option>SC</option>
+                                <option>SD</option>
+                                <option>TN</option>
+                                <option>TX</option>
+                                <option>UT</option>
+                                <option>VA</option>
+                                <option>VT</option>
+                                <option>WA</option>
+                                <option>WI</option>
+                                >
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label">Username</label>
+                    <div class="col-md-4 inputGroupContainer">
+                        <div class="input-group">
+                            <span class="input-group-addon"><i class="glyphicon glyphicon-king"></i></span>
+                            <input name="diocese" placeholder="Diocese" class="form-control" type="text">
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+                <div class="alert alert-success" role="alert" id="success_message">Success <i class="glyphicon glyphicon-thumbs-up"></i> Success!.</div>
+
+                <div class="form-group">
+                    <label class="col-md-4 control-label"></label>
+                    <div class="col-md-4">
+                        <br>
+                        &nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp<button type="submit" class="btn btn-warning">&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbspSUBMIT <span class="glyphicon glyphicon-send"></span>&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp</button>
+                    </div>
+                </div>
+
+            </fieldset>
+        </form>
+    </div>
+        </div>
+        -->

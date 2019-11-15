@@ -51,7 +51,7 @@
                         <li><a asp-area="" asp-controller="Home" asp-action="Explore">Explore</a></li>
                     
                 </ul>
-                <div id="Login"> <partial name="_LoginPartial" /> </div>
+                <partial name="_LoginPartial" />
             </div>
         </div>
     </nav>
@@ -61,7 +61,7 @@
     <partial name="_CookieConsentPartial" />
  
     
-    <div class="container body-content">
+    <div class="container body-content" id="BlackFont">
         @RenderBody()
         <hr />
         <footer>

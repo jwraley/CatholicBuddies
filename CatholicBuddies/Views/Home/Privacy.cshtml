@@ -1,6 +1,153 @@
-﻿@{
-    ViewData["Title"] = "Privacy Policy";
-}
-<h2>@ViewData["Title"]</h2>
+﻿<span style="font-family: inherit;">
+    < Title="Social Networking Site using asp.net,c#,sqlserver"
+    Language="C#" MasterPageFile="~/HomeMaster.master"
+    AutoEventWireup="true" CodeFile="Default.aspx.cs" Inherits="_Default" %>
 
-<p>Use this page to detail your site's privacy policy.</p>
+    <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" Runat="Server">
+        <table class="style2"
+                       style="border-bottom: thin solid #000000; width: 910px;
+        border-left-color: #000000; border-left-width: medium;
+        border-right-color: #000000; border-right-width: medium;
+        border-top-color: #000000; border-top-width: medium;">
+            <tr>
+                <td align="center" class="style3" rowspan="2">
+                    <asp:Image ID="Image1" runat="server" Height="280px"
+                                                   ImageUrl="~/images/heartsanimated.gif" Width="349px" />
+
+
+
+
+                    <asp:Label ID="Label2" runat="server" Font-Names="Raavi" Font-Bold="True">
+                        If your Heart Beats for Your Friends .Join HeartBeat
+                    </asp:Label>
+                </td>
+                <td align="center"
+                                style="border-left-style: solid; border-width: medium; border-color: #3366CC">
+
+
+                    <table style="width: 80%">
+                        <tr>
+                            <td colspan="2"></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px">
+                                YourName
+                            </td>
+                            <td align="left">
+                                <asp:TextBox ID="txtName" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px">
+                                Email
+                            </td>
+                            <td align="left">
+                                <asp:TextBox ID="txtEmail" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="height: 23px; width: 207px">
+                                Password
+                            </td>
+                            <td style="height: 23px" align="left">
+                                <asp:TextBox ID="txtPassword" runat="server" TextMode="Password">
+                                </asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px">
+                                Gender
+                            </td>
+                            <td align="left">
+
+                                <asp:DropDownList ID="ddlGender" runat="server"  Width="150px">
+                                    <asp:ListItem>SelectGender</asp:ListItem>
+                                    <asp:ListItem>Male</asp:ListItem>
+                                    <asp:ListItem>Female</asp:ListItem>
+
+                                </asp:DropDownList>
+
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px; height: 26px;">
+                                DateofBirth
+                            </td>
+                            <td style="height: 26px" align="left">
+                                <asp:DropDownList ID="ddlDay" runat="server">
+                                    <asp:ListItem>Day</asp:ListItem>
+                                    <asp:ListItem>1</asp:ListItem>
+
+                                </asp:DropDownList>
+                                <asp:DropDownList ID="ddlMonth" runat="server">
+                                    <asp:ListItem>Month</asp:ListItem>
+                                    <asp:ListItem>Jan</asp:ListItem>
+                                </asp:DropDownList>
+                                <asp:DropDownList ID="ddlYear" runat="server">
+                                    <asp:ListItem>Year</asp:ListItem>
+                                    <asp:ListItem>2012</asp:ListItem>
+                                </asp:DropDownList>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px">
+                                Your Photo
+                            </td>
+                            <td align="left">
+                                <asp:FileUpload ID="uploadPhoto" runat="server" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px">
+                                About Me
+                            </td>
+                            <td align="left">
+                                <asp:TextBox ID="txtAboutMe" runat="server" Height="63px" TextMode="MultiLine"
+                                                                             Width="216px"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px">
+                                Country
+                            </td>
+                            <td align="left">
+                                <asp:TextBox ID="txtCountry" runat="server"></asp:TextBox>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px"></td>
+                            <td align="left">
+                                <asp:Button ID="btnRegister" runat="server" Text="Register"
+                                                                            onclick="btnRegister_Click" />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px"></td>
+                            <td></td>
+                        </tr>
+                        <tr>
+                            <td style="width: 207px"></td>
+                            <td></td>
+                        </tr>
+                    </table>
+
+
+                </td>
+            </tr>
+
+        </table>
+    </asp:Content>
+
+</span>

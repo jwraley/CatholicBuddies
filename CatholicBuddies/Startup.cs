@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -17,6 +18,7 @@ namespace CatholicBuddies
 {
     public class Startup
     {
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -27,6 +29,7 @@ namespace CatholicBuddies
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+
             services.Configure<CookiePolicyOptions>(options =>
             {
                 // This lambda determines whether user consent for non-essential cookies is needed for a given request.
@@ -41,6 +44,20 @@ namespace CatholicBuddies
                 .AddEntityFrameworkStores<ApplicationDbContext>();
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddLogging();
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
+         /*   services.AddSimpleInjector(container, options =>
+            {
+                // AddAspNetCore() wraps web requests in a Simple Injector scope.
+                options.AddAspNetCore()
+                    // Ensure activation of a specific framework type to be created by
+                    // Simple Injector instead of the built-in configuration system.
+                    .AddControllerActivation()
+                    .AddViewComponentActivation()
+                    .AddPageModelActivation()
+                    .AddTagHelperActivation();
+            }); */
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -65,10 +82,12 @@ namespace CatholicBuddies
 
             app.UseMvc(routes =>
             {
-                routes.MapRoute(
+               _=routes.MapRoute(
                     name: "default",
-                    template: "{controller=Home}/{action=Index}/{id?}");
+                        template: "{controller=Home}/{action=Signup}/{id?}");
+                    //template: "{controller=DatabaseAccess}/{action=Logon}/{id?}");
             });
         }
     }
 }
+

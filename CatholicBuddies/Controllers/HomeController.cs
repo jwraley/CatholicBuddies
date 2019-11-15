@@ -14,25 +14,7 @@ namespace CatholicBuddiesDBCore.Controllers
 {
     public class HomeController : Controller
     {
-        string connectionString = @"Data Source=SERINITY7415\SQLEXPRESS;Initial Catalog = UserTable; Integrated Security = True";
-        [HttpGet]
-        public ActionResult User()
-        {
-            DataTable users = new DataTable();
-            using (SqlConnection sqlCon = new SqlConnection("Server=(localdb)\\mssqllocaldb;Database=aspnet-CatholicBuddies-F6985602-D296-4761-9318-ED3EE8F9C595;Trusted_Connection=True;MultipleActiveResultSets=true"))
-            {
-                sqlCon.Open();
-                SqlDataAdapter sqlData = new SqlDataAdapter("SELECT * FROM USER", sqlCon);
-                sqlData.Fill(users);
-
-            }
-            return View(users);
-        }
-
-                
-  
-        
-
+   
         public IActionResult Index()
         {
             return View();
@@ -44,6 +26,12 @@ namespace CatholicBuddiesDBCore.Controllers
             return View();
         }
 
+        
+        public IActionResult UpdateProfile()
+        {
+            ViewData["Message"] = "Your personal page to help share the faith";
+            return View();
+        }  
 
         public IActionResult About()
         {
@@ -71,7 +59,18 @@ namespace CatholicBuddiesDBCore.Controllers
 
             return View();
         }
+        public IActionResult Logon()
+         {
+           return View();
+         }
 
+
+            public IActionResult Signup()
+        {
+            ViewData["Message"] = "Sign Up";
+
+            return View();
+        }
         public IActionResult Privacy()
         {
             return View();
@@ -84,3 +83,64 @@ namespace CatholicBuddiesDBCore.Controllers
         }
     }
 }
+
+/* 
+ * v [HttpGet]
+        public IActionResult UpdateProfile()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult UpdateProfile([Bind] UserProfile profile)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    string resp = UserDB.UpdateUserProfile(profile);
+                    TempData["msg"] = resp;
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = ex.Message;
+            }
+            return View();
+        }
+        [HttpGet]
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public IActionResult Register([Bind] UserInfo users)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    string resp = UserDB.UserInfo(users);
+                    TempData["msg"] = resp;
+                }
+            }
+            catch (Exception ex)
+            {
+                TempData["msg"] = ex.Message;
+            }
+            return View();
+        }
+      //  [Route("/DatabaseAccess/ActionMethod", Name = "RegisterRoute")]
+  
+        public IActionResult Logon()
+        {
+            return View();
+        }
+     
+
+        [HttpPost]
+        public IActionResult Register(RegisterViewModel model)
+        {
+            return View();
+        }
+    } */
